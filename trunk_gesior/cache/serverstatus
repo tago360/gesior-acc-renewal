@@ -1,5 +1,8 @@
-serverStatus_checkInterval = "303" 
-serverStatus_lastCheck = "1292096965" 
-serverStatus_online = "0" 
-serverStatus_players = "0" 
-serverStatus_playersMax = "0" 
+<?PHP
+$_web_config["lastCheck"] = 0;
+$_web_config["online"] = 0;
+$_web_config["players"] = 0;
+$_web_config["playersMax"] = 0;
+$_web_config["uptime"] = 0;
+$_web_config["monsters"] = 0;
+?>
