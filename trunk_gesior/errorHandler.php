@@ -1,0 +1,8 @@
+<?PHP
+if(!isset($errorHandler))
+{
+
+
+}
+?>
+
