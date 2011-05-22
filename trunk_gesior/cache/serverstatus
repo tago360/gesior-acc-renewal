@@ -1,6 +1,6 @@
 <?PHP
-$_web_config["lastCheck"] = 0;
-$_web_config["online"] = 0;
+$_web_config["lastCheck"] = 300;
+$_web_config["online"] = false;
 $_web_config["players"] = 0;
 $_web_config["playersMax"] = 0;
 $_web_config["uptime"] = 0;

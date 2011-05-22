@@ -171,17 +171,17 @@ class Functions
 		return 'ORDER BY ' . $default . ' ' . $type;
 	}
 
-	public function getOrderParameter($arr, $order, $this)
+	public function getOrderParameter($arr, $order, $that)
 	{
 		$type = 'asc';
-		if($orderBy = $arr[$this])
+		if($orderBy = $arr[$that])
 			if(isset($_GET[$order]))
 			{
 				$v = explode('_', strrev($_GET[$order]), 2);
-				if(strrev($v[1]) == $this)
+				if(strrev($v[1]) == $that)
 					$type = (strrev($v[0]) == 'asc' ? 'desc' : 'asc');
 			}
-		return $this . '_' . $type;
+		return $that . '_' . $type;
 	}
 
 	public function getPageViews()

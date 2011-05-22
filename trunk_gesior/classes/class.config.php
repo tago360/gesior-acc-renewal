@@ -72,7 +72,10 @@ class ConfigPHP
 
 	public function loadFromString($string)
 	{
-		$this->config = eval($string . chr(0x0A) . 'return $_web_config;');
+		
+		eval('$_web_config = array();' . chr(0x0A) . $string . chr(0x0A) . '');
+		$this->config = $_web_config;
+		unset($_web_config);
 	}
 
 	private function parsePhpVariableToText($value)

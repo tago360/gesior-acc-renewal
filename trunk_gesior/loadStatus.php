@@ -1,10 +1,10 @@
 <?PHP
 $statusTimeout = max(1, $configServer->getValue('statusTimeout') / 1000);
 $serverStatusCache = new ConfigPHP('./cache/serverstatus');
-if($serverStatusCache->getValue('lastCheck'] + $statusTimeout < time())
+if($serverStatusCache->getValue('lastCheck') + $statusTimeout < time())
 {
 	$serverStatusCache->setValue('lastCheck', $statusTimeout);
-	$sock = @fsockopen($configServer->getValue('ip'), $configServer->getValue('port'), $errno, $errstr, 1);
+	$sock = @fsockopen($configServer->getValue('ip'), $configServer->getValue('statusPort'), $errno, $errstr, 1);
 	if($sock)
 	{
 		fwrite($sock, chr(6).chr(0).chr(255).chr(255).'info');
@@ -17,7 +17,7 @@ if($serverStatusCache->getValue('lastCheck'] + $statusTimeout < time())
 		$serverStatusCache->setValue('players', $matches[1]);
 		$serverStatusCache->setValue('playersMax', $matches[2]);
 		preg_match('/uptime="(\d+)"/', $data, $matches);
-		$serverStatusCache->setValue('serverStatus_uptime'], floor($matches[1] / 3600) . 'h ' . floor(($matches[1] - $h*3600) / 60). 'm';
+		$serverStatusCache->setValue('uptime', floor($matches[1] / 3600) . 'h ' . floor(($matches[1] - $h*3600) / 60) . 'm');
 		preg_match('/monsters total="(\d+)"/', $data, $matches);
 		$serverStatusCache->setValue('monsters', $matches[1]);
 	}

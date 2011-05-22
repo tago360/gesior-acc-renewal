@@ -2,23 +2,23 @@
 include_once('./loadConfig.php');
 if($configServer->isSetKey('mysqlHost'))
 {
-	const SERVERCONFIG_SQL_TYPE = 'sqlType';
-	const SERVERCONFIG_SQL_HOST = 'mysqlHost';
-	const SERVERCONFIG_SQL_PORT = 'mysqlPort';
-	const SERVERCONFIG_SQL_USER = 'mysqlUser';
-	const SERVERCONFIG_SQL_PASS = 'mysqlPass';
-	const SERVERCONFIG_SQL_DATABASE = 'mysqlDatabase';
-	const SERVERCONFIG_SQLITE_FILE = 'sqlFile';
+	define('SERVERCONFIG_SQL_TYPE', 'sqlType');
+	define('SERVERCONFIG_SQL_HOST', 'mysqlHost');
+	define('SERVERCONFIG_SQL_PORT', 'mysqlPort');
+	define('SERVERCONFIG_SQL_USER', 'mysqlUser');
+	define('SERVERCONFIG_SQL_PASS', 'mysqlPass');
+	define('SERVERCONFIG_SQL_DATABASE', 'mysqlDatabase');
+	define('SERVERCONFIG_SQLITE_FILE', 'sqlFile');
 }
 elseif($configServer->isSetKey('sqlHost'))
 {
-	const SERVERCONFIG_SQL_TYPE = 'sqlType';
-	const SERVERCONFIG_SQL_HOST = 'sqlHost';
-	const SERVERCONFIG_SQL_PORT = 'sqlPort';
-	const SERVERCONFIG_SQL_USER = 'sqlUser';
-	const SERVERCONFIG_SQL_PASS = 'sqlPass';
-	const SERVERCONFIG_SQL_DATABASE = 'sqlDatabase';
-	const SERVERCONFIG_SQLITE_FILE = 'sqlFile';
+	define('SERVERCONFIG_SQL_TYPE', 'sqlType');
+	define('SERVERCONFIG_SQL_HOST', 'sqlHost');
+	define('SERVERCONFIG_SQL_PORT', 'sqlPort');
+	define('SERVERCONFIG_SQL_USER', 'sqlUser');
+	define('SERVERCONFIG_SQL_PASS', 'sqlPass');
+	define('SERVERCONFIG_SQL_DATABASE', 'sqlDatabase');
+	define('SERVERCONFIG_SQLITE_FILE', 'sqlFile');
 }
 
 include_once('./classes/pot/OTS.php');
@@ -46,11 +46,11 @@ elseif($configServer->getValue(SERVERCONFIG_SQL_TYPE) == 'sqlite')
 	$_sqlitePath = $configSite->getValue('serverPath') . $configServer->getValue(SERVERCONFIG_SQLITE_FILE);
 	try
 	{
-		$ots->connect(POT::DB_SQLITE, array('database' => _sqlitePath));
+		$OTS->connect(POT::DB_SQLITE, array('database' => $_sqlitePath));
 	}
 	catch(PDOException $error)
 	{
-		echo 'Database error - can\'t open SQLite database. Possible reasons:<br /><b>' . _sqlitePath . '</b> - file isn\'t valid SQLite database.<br /><b>' . _sqlitePath . '</b> - doesn\'t exist.<br /><font color="red">Wrong PHP configuration. Default PHP does not work with SQLite databases!</font>';
+		echo 'Database error - can\'t open SQLite database. Possible reasons:<br /><b>' . $_sqlitePath . '</b> - file isn\'t valid SQLite database.<br /><b>' . $_sqlitePath . '</b> - doesn\'t exist.<br /><font color="red">Wrong PHP configuration. Default PHP does not work with SQLite databases!</font>';
 		exit;
 	}
 }
