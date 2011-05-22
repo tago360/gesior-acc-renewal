@@ -1,3 +1,3 @@
 <?php
-echo 'login account';
+echo 'account login';
 ?>
