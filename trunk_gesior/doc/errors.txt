@@ -1,0 +1,14 @@
+#C-1 = line of config LUA file has comment after value [EXAMPLE]serverName = "Forgotten" [B]-- comment is here[/B][/EXAMPLE] |OR| isn't valid LUA format value
+#C-2 = path to file is incorrect |OR| PHP doesn't have access to this file, check file access [chmod on linux] |OR| I/O error, HDD/system overloaded [can occur on VPS, RPS, Cloud and Virtual Host]
+#C-3 = key doesn't exist in config, unexpected bug, invalid config file or scripter mistake
+#C-4 = path to file is incorrect |OR| PHP doesn't have access to this file, check file access [chmod on linux] |OR| I/O error, HDD/system overloaded [can occur on VPS, RPS, Cloud and Virtual Host]
+#C-5 = key doesn't exist in config, unexpected bug, invalid config file or scripter mistake
+#C-6 = problems with link generation, scripter mistake
+#C-7 = problems with link generation, scripter mistake
+
+#E-1 = problem with website config
+#E-2 = problem with server config
+#E-3 = invalid database config in server config [cache?]
+#E-4 = can't connect to mysql
+#E-5 = can't connect to sqlite
+#E-6 = invalid database type (not mysql/sqlite)
