@@ -1,4 +1,6 @@
 <?PHP
+if(!defined('INITIALIZED'))
+	die('PHP script: Access denied.');
 $logged = false;
 if(isset($_SESSION['account']))
 {

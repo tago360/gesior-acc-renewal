@@ -1,4 +1,4 @@
 <?php
-echo $pathToPage;
+echo '404';
 exit;
 ?>

@@ -1,7 +1,30 @@
 <?PHP
 // of course here could be just functions, but if we make class, it will be more readable in other scripts
-class Functions
+class Functions extends ConfigPHP
 {
+    public function __construct($path = false)
+    {
+        parent::__construct($path);
+    }
+
+	public function generateURL($page, $params = array())
+	{// do klasy odwolanie
+		if($GLOBALS['WEB']->getValue('useRewrite'))
+		{
+			return 'rew';
+		}
+		else
+		{
+			return 'not';
+		}
+	}
+
+	public function isValidFolderName($string)
+	{
+		$res = eregi_replace("([A-Z0-9]+)","",$string);
+		return empty($res);
+	}
+
 	public function isPremium($premdays, $lastday)
 	{
 		return ($premdays - (date("z", time()) + (365 * (date("Y", time()) - date("Y", $lastday))) - date("z", $lastday)) > 0);
@@ -17,7 +40,7 @@ class Functions
 			return true;
 	}
 
-	public function checkCharName($name)	
+	public function checkCharacterName($name)	
 	{
 		$name_to_check = strtolower($name);
 		$names_blocked = array('gm','cm', 'god', 'tutor');

@@ -1,8 +1,3 @@
 <?PHP
-if(!isset($errorHandler))
-{
-
-
-}
+include_once('./classes/class.errors.php');
 ?>
-

@@ -39,12 +39,12 @@ class POT
 	const PASSCRYPT_SHA512 = 4;
 	const PASSCRYPT_VAHASH = 5;
 	private $passwordsEncryptions = array(
-	'plain' => PASSCRYPT_PLAIN,
-	'md5' => PASSCRYPT_MD5,
-	'sha1' => PASSCRYPT_SHA1,
-	'sha256' => PASSCRYPT_SHA256,
-	'sha512' => PASSCRYPT_SHA512,
-	'vahash' => PASSCRYPT_VAHASH
+	'plain' => POT::PASSCRYPT_PLAIN,
+	'md5' => POT::PASSCRYPT_MD5,
+	'sha1' => POT::PASSCRYPT_SHA1,
+	'sha256' => POT::PASSCRYPT_SHA256,
+	'sha512' => POT::PASSCRYPT_SHA512,
+	'vahash' => POT::PASSCRYPT_VAHASH
 	);
 	private $passwordsEncryption;
     public function setPasswordsEncryption($encryption)

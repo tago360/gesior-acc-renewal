@@ -1,4 +1,6 @@
 <?php
+if(!defined('INITIALIZED'))
+	die('PHP script: Access denied.');
 /*
 	exaBotDefender 1.0
 	http://www.web6.pl/exaBotDefender/
