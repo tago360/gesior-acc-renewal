@@ -30,12 +30,15 @@ class Link extends Errors
     {
 		$this->customParameters = $custom_parameters;
     }
-		$this->parameter[$number] = $parameter[$number];
+
+    public function setParameter($number, $parameter = '')
+    {
+		$this->parameter[$number] = $parameter;
     }
 
     public function setCustomParameter($number, $custom_parameter = '')
     {
-		$this->customParameter[$number] = $custom_parameter[$number];
+		$this->customParameter[$number] = $custom_parameter;
     }
 
     public function getPage()
